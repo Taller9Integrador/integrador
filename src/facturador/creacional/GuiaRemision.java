@@ -52,7 +52,19 @@ public class GuiaRemision extends ComprobanteElectronico {
     }
     
     
-    
-    
-    
+    @Override
+    public String toString() {
+    	StringBuilder sb=new StringBuilder();
+    	sb.append("GUIA-REMISION\n");
+    	for(String detalle:detallesEmisor) {
+    		sb.append(detalle+"\n");
+    	}
+    	sb.append("Vehiculo: "+placaVehiculo+"\n");
+    	sb.append("Destino: "+destino+"\n");
+    	for(String producto:listaProductos) {
+    		sb.append(producto+"\n");
+    	}
+    	
+    	return sb.toString();
+    }   
 }

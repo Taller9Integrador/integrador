@@ -41,7 +41,18 @@ public class NotaCredito extends ComprobanteElectronico{
     }
     
     
-    
+    @Override
+    public String toString() {
+    	StringBuilder sb=new StringBuilder();
+    	sb.append("NOTA-CREDITO\n");
+    	for(String detalle:detallesEmisor) {
+    		sb.append(detalle+"\n");
+    	}
+    	sb.append("Detalle: "+detalleModificacion+"\n");
+    	sb.append("Valor a pagar: $"+valorAPagar+"\n");
+    	
+    	return sb.toString();
+    }
     
     
 }
