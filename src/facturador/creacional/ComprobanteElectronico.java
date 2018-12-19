@@ -9,11 +9,13 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
+import facturador.estructural.Imprimible;
+
 /**
  *
  * @author Palacios
  */
-public class ComprobanteElectronico {
+public abstract class ComprobanteElectronico implements Imprimible {
     
     protected List<String> detallesEmisor;
     protected String nombreCliente;
@@ -23,10 +25,10 @@ public class ComprobanteElectronico {
     protected String claveAcceso;
 
     public ComprobanteElectronico(String nombreCliente, long codigo, LocalDate fecha) {
+    	this();
         this.nombreCliente = nombreCliente;
         this.codigo = codigo;
         this.fecha = fecha;
-        this.detallesEmisor = new LinkedList<>();
     }
 
     public ComprobanteElectronico() {
@@ -81,7 +83,18 @@ public class ComprobanteElectronico {
         this.claveAcceso = claveAcceso;
     }
 
-    
+    @Override
+    public String toString() {
+    	StringBuilder sb=new StringBuilder();
+    	
+    	for(String detalle:detallesEmisor) {
+    		sb.append(detalle+"\n");
+    	}
+    	sb.append("Cliente: "+nombreCliente+"\n");
+    	sb.append("Fecha: "+fecha+"\n");
+    	
+    	return sb.toString();
+    }
     
     
     

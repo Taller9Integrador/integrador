@@ -22,8 +22,9 @@ public class Factura extends ComprobanteElectronico{
         this.productos = productos;
         this.total = total;
     }
-
+    
     public Factura() {
+    	super();
     }
 
     public List<String> getProductos() {
@@ -46,9 +47,7 @@ public class Factura extends ComprobanteElectronico{
     public String toString() {
     	StringBuilder sb=new StringBuilder();
     	sb.append("FACTURA\n");
-    	for(String detalle:detallesEmisor) {
-    		sb.append(detalle+"\n");
-    	}
+    	sb.append(super.toString()+"\n");
     	sb.append("Productos\n");
     	for(String producto:productos) {
     		sb.append(producto+"\n");

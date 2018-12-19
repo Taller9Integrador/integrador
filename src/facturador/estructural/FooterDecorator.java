@@ -1,17 +1,14 @@
 package facturador.estructural;
 
-import facturador.creacional.ComprobanteElectronico;
-
-public class FooterDecorator extends ComprobanteDecorator {
-	private ComprobanteElectronico comprobante;
+public class FooterDecorator implements Imprimible {
+	private Imprimible comprobante;
 	
-	public FooterDecorator(){
-		
-	}
-	public FooterDecorator(ComprobanteElectronico comprobante) {
-		comprobante = this.comprobante;
-		detallesEmisor.add("Esto es un footer");
-	
+	public FooterDecorator(Imprimible comprobante) {
+		this.comprobante=comprobante;
 	}
 
+	@Override
+	public String toString() {
+		return comprobante.toString()+"Esto es un footer";
+	}
 }

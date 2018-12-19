@@ -1,24 +1,15 @@
 package facturador.estructural;
 
-import java.util.List;
-
 import facturador.creacional.ComprobanteElectronico;
 
-public class ComprobanteDecorator extends ComprobanteElectronico {
-
-	ComprobanteElectronico comprobante;
-    public void Decorator(){
+public abstract class ComprobanteDecorator extends ComprobanteElectronico {
+	protected ComprobanteElectronico comprobante;
+	
+    public ComprobanteDecorator(){
     }
     
-    public void DetalleDecorator(ComprobanteElectronico comprobante){
+    public ComprobanteDecorator(ComprobanteElectronico comprobante){
         this.comprobante=comprobante;
     }
     
-    public List<String> getDetallesEmisor(){    
-        return super.detallesEmisor;
-    }
-    
-    public ComprobanteElectronico getComprobante(){
-        return comprobante;
-    }
 }

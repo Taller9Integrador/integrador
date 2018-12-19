@@ -1,15 +1,14 @@
 package facturador.estructural;
 
-import facturador.creacional.ComprobanteElectronico;
-
-public class LogoDecorator extends ComprobanteDecorator {
-private ComprobanteElectronico comprobante;
+public class LogoDecorator implements Imprimible {
+	private Imprimible comprobante;
 	
-	public LogoDecorator(){
-		
+	public LogoDecorator(Imprimible comprobante) {
+		this.comprobante=comprobante;
 	}
-	public LogoDecorator(ComprobanteElectronico comprobante) {
-		comprobante = this.comprobante;	
-		detallesEmisor.add("Esto es un logo ");
+	
+	@Override
+	public String toString() {
+		return "Esto es un logo\n"+comprobante.toString();
 	}
 }

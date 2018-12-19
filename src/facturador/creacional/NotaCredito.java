@@ -20,8 +20,9 @@ public class NotaCredito extends ComprobanteElectronico{
         this.detalleModificacion = detalleModificacion;
         this.valorAPagar = valorAPagar;
     }
-
+    
     public NotaCredito() {
+    	super();
     }
 
     public String getDetalleModificacion() {
@@ -45,9 +46,7 @@ public class NotaCredito extends ComprobanteElectronico{
     public String toString() {
     	StringBuilder sb=new StringBuilder();
     	sb.append("NOTA-CREDITO\n");
-    	for(String detalle:detallesEmisor) {
-    		sb.append(detalle+"\n");
-    	}
+    	sb.append(super.toString()+"\n");
     	sb.append("Detalle: "+detalleModificacion+"\n");
     	sb.append("Valor a pagar: $"+valorAPagar+"\n");
     	

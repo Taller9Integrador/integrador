@@ -23,8 +23,9 @@ public class GuiaRemision extends ComprobanteElectronico {
         this.placaVehiculo = placaVehiculo;
         this.listaProductos = listaProductos;
     }
-
+    
     public GuiaRemision() {
+    	super();
     }
 
     public String getDestino() {
@@ -56,9 +57,7 @@ public class GuiaRemision extends ComprobanteElectronico {
     public String toString() {
     	StringBuilder sb=new StringBuilder();
     	sb.append("GUIA-REMISION\n");
-    	for(String detalle:detallesEmisor) {
-    		sb.append(detalle+"\n");
-    	}
+    	sb.append(super.toString()+"\n");
     	sb.append("Vehiculo: "+placaVehiculo+"\n");
     	sb.append("Destino: "+destino+"\n");
     	for(String producto:listaProductos) {
